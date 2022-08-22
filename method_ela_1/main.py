@@ -4,7 +4,6 @@ import argparse
 from PIL import Image
 
 
-
 import level1, ela
 from model import IMDModel
 
@@ -46,6 +45,6 @@ if __name__ == "__main__":
     print("Working on",device)
 
     model_path = "model/model_c1.pth"
-    model = torch.load(model_path)
+    model = torch.load(model_path,map_location='cpu')
 
     infer(model=model, img_path=args.img_path, device=device)
